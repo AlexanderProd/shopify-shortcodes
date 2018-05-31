@@ -1,0 +1,58 @@
+<style>
+button.fill {
+  padding: 15px 15px;
+  position: relative;
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #3b5998;
+  border: 1px #3b5998 solid;
+  border-radius: 0px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
+}
+
+.wrapper{
+  text-align: center;
+}
+
+.fill:hover {
+  color: white;
+}
+
+.fill:before {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.fill:hover:before {
+  top: 0;
+}
+</style>
+<div class="wrapper">
+  <button class="fill" id="fb-share-button" onclick="openWindow()">Share on Facebook</button>
+</div>
+
+<script>
+var url = "//www.facebook.com/sharer.php?u=" + window.location.href;
+function openWindow() {
+    var myWindow = window.open(url, "", "width=800,height=600");
+}
+</script>
